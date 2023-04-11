@@ -5,12 +5,11 @@
 class Convertdate < Formula
   desc ""
   homepage "https://github.com/Ulleri-Tech/nepali-date-cli"
-  version "0.5-SNAPSHOT-dc22856"
+  version "0.8"
 
   on_macos do
-    url 
-"https://github.com/Ulleri-Tech/nepali-date-cli/releases/download/v0.5/nepali-date-cli_0.5-SNAPSHOT-dc22856_darwin_all.tar.gz"
-    sha256 "7409ccabf1b7f51cdb60da81a50f1f014756a3a36a63ccfdf37795d0b8c9e31b"
+    url "https://github.com/Ulleri-Tech/nepali-date-cli/releases/download/v0.8/nepali-date-cli_0.8_darwin_all.tar.gz"
+    sha256 "3689fbc63211e30832dc90eb0958905d90ab69690ff9b137292840e68b55d99e"
 
     def install
       bin.install "nepali-date-cli"
@@ -18,28 +17,25 @@ class Convertdate < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url 
-"https://github.com/Ulleri-Tech/nepali-date-cli/releases/download/v0.5/nepali-date-cli_0.5-SNAPSHOT-dc22856_linux_armv6.tar.gz"
-      sha256 "685725f3f7df34b731bc3ce806fa4b8487016bf20764d4bc33b04833e6e61c4b"
-
-      def install
-        bin.install "convertdate"
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url 
-"https://github.com/Ulleri-Tech/nepali-date-cli/releases/download/v0.5/nepali-date-cli_0.5-SNAPSHOT-dc22856_linux_arm64.tar.gz"
-      sha256 "b1b3c1001ceaa0eb68776e582aed0e4aba235935ba5f5a6de60d926a7d188a8a"
+      url "https://github.com/Ulleri-Tech/nepali-date-cli/releases/download/v0.8/nepali-date-cli_0.8_linux_arm64.tar.gz"
+      sha256 "a57fac497ddb76ca7132c9beca5fc4a1d697a127f66f301378854c4e4205c9d2"
 
       def install
         bin.install "convertdate"
       end
     end
     if Hardware::CPU.intel?
-      url 
-"https://github.com/Ulleri-Tech/nepali-date-cli/releases/download/v0.5/nepali-date-cli_0.5-SNAPSHOT-dc22856_linux_amd64.tar.gz"
-      sha256 "45864c0a81363ddb92c7550b36bf037804f07513eb11a56dbccd4cfcc2cf17f3"
+      url "https://github.com/Ulleri-Tech/nepali-date-cli/releases/download/v0.8/nepali-date-cli_0.8_linux_amd64.tar.gz"
+      sha256 "c44ea6daafbbe9c2b9fa5a15c3d59a07f89d58ea907ef1e5dbf93a6e0ddc4209"
+
+      def install
+        bin.install "convertdate"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/Ulleri-Tech/nepali-date-cli/releases/download/v0.8/nepali-date-cli_0.8_linux_armv6.tar.gz"
+      sha256 "f530130bb7f3d3fb5b968e14dedb742a0a589f7d294e367063538aaa2e1146dd"
 
       def install
         bin.install "convertdate"
@@ -47,4 +43,3 @@ class Convertdate < Formula
     end
   end
 end
-
